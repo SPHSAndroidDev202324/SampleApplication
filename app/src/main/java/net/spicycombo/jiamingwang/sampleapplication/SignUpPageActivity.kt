@@ -1,28 +1,26 @@
 package net.spicycombo.jiamingwang.sampleapplication
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import net.spicycombo.jiamingwang.sampleapplication.databinding.ActivityLoginPageBinding
+import net.spicycombo.jiamingwang.sampleapplication.databinding.ActivitySignupPageBinding
 
-class LoginPageActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityLoginPageBinding
+class SignUpPageActivity : AppCompatActivity() {
+    private lateinit var binding: ActivitySignupPageBinding
 
     override fun onCreate(previousState : Bundle?) {
         super.onCreate(previousState)
-        binding = ActivityLoginPageBinding.inflate(layoutInflater)
+        binding = ActivitySignupPageBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setSupportActionBar(binding.toolbar)
+        setSupportActionBar(binding.toolbar4)
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true);
-        supportActionBar?.title = "Login" // getString(R.string.myinfo_title)
+        supportActionBar?.title = "Signup" // getString(R.string.myinfo_title)
 
-        binding.signupButton.setOnClickListener() {
-            openSignUp()
-        }
+
     }
 
     @Override
@@ -30,12 +28,5 @@ class LoginPageActivity : AppCompatActivity() {
         if (item.itemId == android.R.id.home) { finish() }
 
         return super.onOptionsItemSelected(item)
-    }
-
-    fun openSignUp() {
-        val intent = Intent(baseContext, SignUpPageActivity::class.java)
-        intent.addFlags(Intent.FLAG_ACTIVITY_PREVIOUS_IS_TOP)
-        // I took 3 minutes to realize I have to add .java after... :CCCC
-        startActivity(intent)
     }
 }
