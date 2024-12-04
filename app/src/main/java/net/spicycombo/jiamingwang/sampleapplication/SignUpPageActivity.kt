@@ -1,5 +1,7 @@
 package net.spicycombo.jiamingwang.sampleapplication
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
@@ -14,18 +16,37 @@ class SignUpPageActivity : AppCompatActivity() {
         binding = ActivitySignupPageBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setSupportActionBar(binding.toolbar4)
+        setSupportActionBar(binding.signupToolbar)
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true);
         supportActionBar?.title = "Signup" // getString(R.string.myinfo_title)
 
+        binding.signupButtonConfirmReg.setOnClickListener() {
+            // extract data
+            val password = binding.signupEditTextPassword.text.toString()
+            val confirm = binding.signupEditTextConfirmPass.text.toString()
+            val username = binding.signupEditTextUsername.text.toString()
+            val email = binding.signupEditTextEmail.text.toString()
+            // TODO: Validate the data
+            // TODO: do some server side things
 
+            val resultIntent = Intent().apply {
+                putExtra(LoginPageActivity.EXTRA_USERNAME, username)
+                putExtra(LoginPageActivity.EXTRA_PASSWORD, password)
+            }
+            setResult(Activity.RESULT_OK, resultIntent)
+            finish()
+
+        }
     }
 
     @Override
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.itemId == android.R.id.home) { finish() }
+        if (item.itemId == android.R.id.home) {
+            setResult(Activity.RESULT_CANCELED)
+            finish()
+        }
 
         return super.onOptionsItemSelected(item)
     }

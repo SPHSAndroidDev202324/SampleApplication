@@ -17,6 +17,8 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        setSupportActionBar(binding.toolbar)
         //https://developer.android.com/develop/ui/views/components/appbar/setting-up
         //https://developer.android.com/develop/ui/views/touch-and-input/keyboard-input/style
         //https://stackoverflow.com/questions/10978038/restrict-edittext-to-single-line

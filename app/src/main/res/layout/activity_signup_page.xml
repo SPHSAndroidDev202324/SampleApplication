@@ -27,7 +27,7 @@
         app:layout_constraintGuide_end="30dp" />
 
     <com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/toolbar4"
+        android:id="@+id/signupToolbar"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:background="?attr/colorPrimary"
@@ -37,7 +37,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/signupTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sign up"
@@ -47,16 +47,16 @@
         app:layout_constraintTop_toTopOf="@+id/guideline7" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/signupSubtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Create an account to access services"
         app:layout_constraintStart_toStartOf="@+id/guideline8"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/signupTitle" />
 
     <EditText
-        android:id="@+id/editTextText"
+        android:id="@+id/signupEditTextUsername"
         android:layout_width="0dp"
         android:layout_height="58dp"
         android:layout_marginTop="16dp"
@@ -67,10 +67,10 @@
         android:maxLines="1"
         app:layout_constraintEnd_toStartOf="@+id/guideline9"
         app:layout_constraintStart_toStartOf="@+id/guideline8"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintTop_toBottomOf="@+id/signupSubtitle" />
 
     <EditText
-        android:id="@+id/editTextTextPassword3"
+        android:id="@+id/signupEditTextPassword"
         android:layout_width="0dp"
         android:layout_height="58dp"
         android:layout_marginTop="16dp"
@@ -80,24 +80,24 @@
         android:inputType="textPassword"
         app:layout_constraintEnd_toStartOf="@+id/guideline9"
         app:layout_constraintStart_toStartOf="@+id/guideline8"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress3" />
+        app:layout_constraintTop_toBottomOf="@+id/signupEditTextEmail" />
 
     <EditText
-        android:id="@+id/editTextTextPassword4"
+        android:id="@+id/signupEditTextConfirmPass"
         android:layout_width="0dp"
         android:layout_height="58dp"
         android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="Confirm Password"
-        android:imeOptions="actionNext"
+        android:imeOptions="actionDone"
         android:inputType="textPassword"
         app:layout_constraintEnd_toStartOf="@+id/guideline9"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline8"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword3" />
+        app:layout_constraintTop_toBottomOf="@+id/signupEditTextPassword" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress3"
+        android:id="@+id/signupEditTextEmail"
         android:layout_width="0dp"
         android:layout_height="58dp"
         android:layout_marginTop="16dp"
@@ -108,15 +108,15 @@
         android:maxLines="1"
         app:layout_constraintEnd_toStartOf="@+id/guideline9"
         app:layout_constraintStart_toStartOf="@+id/guideline8"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText" />
+        app:layout_constraintTop_toBottomOf="@+id/signupEditTextUsername" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/signupButtonConfirmReg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="Register"
         app:layout_constraintStart_toStartOf="@+id/guideline8"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword4" />
+        app:layout_constraintTop_toBottomOf="@+id/signupEditTextConfirmPass" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
