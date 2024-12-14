@@ -4,7 +4,7 @@ class RegistrationUtil {
     companion object {
         // use this in the test class for the is username taken test
         // make another similar list for some taken emails
-        var existingUsers = listOf("test")
+        var existingUsers = listOf("MrMills")
         // you can use listOf<type>() instead of making the list & adding individual
         // List<String> blah...
 

@@ -1,16 +1,22 @@
 package net.spicycombo.jiamingwang.sampleapplication
 
 import android.app.Activity
+import android.content.ComponentName
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.IntentSanitizer
+import androidx.core.view.KeyEventDispatcher.Component
 import net.spicycombo.jiamingwang.sampleapplication.databinding.ActivityLoginPageBinding
 
 class LoginPageActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginPageBinding
+    private val TAG = "LoginPageActivity"
 
     companion object {
         // the values to send in intents are EXTRAS
@@ -44,6 +50,19 @@ class LoginPageActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true);
         supportActionBar?.title = "Login" // getString(R.string.myinfo_title)
+
+        binding.loginButton.setOnClickListener() {
+            val username = binding.editTextUsername.text.toString()
+            if (username.isNotEmpty()) {
+                val result = Intent()
+                result.putExtra(EXTRA_USERNAME, username)
+                Log.i(TAG, "User " + intent.getStringExtra(EXTRA_USERNAME))
+
+                setResult(Activity.RESULT_OK, result)
+                finish()
+            }
+            else Toast.makeText(this, "Username cannot be empty.", Toast.LENGTH_SHORT).show()
+        }
 
         binding.signupButton.setOnClickListener() {
             openSignUp()
