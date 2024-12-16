@@ -18,9 +18,10 @@ class RegistrationUtil {
         // minimum number of characters is 3
 
         fun validateUsername(username: String) : Boolean {
+            if (!username.contains("[A-Za-z0-9]".toRegex())) return false
             if (isExistingUser(username)) return false
             // do other things here too!
-            return false
+            return true
             // TODO: Implement
         }
 
@@ -36,7 +37,7 @@ class RegistrationUtil {
             if (password.count { it.isUpperCase() } < 1) return false
             if (password.count { it.isLowerCase() } < 1) return false
             // if (password.count { it == '!' })
-            return false
+            return true
             // TODO: Implement
         }
 
