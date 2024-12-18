@@ -28,7 +28,11 @@ class SignUpPageActivity : AppCompatActivity() {
             val confirm = binding.signupEditTextConfirmPass.text.toString()
             val username = binding.signupEditTextUsername.text.toString()
             val email = binding.signupEditTextEmail.text.toString()
-            // TODO: Validate the data
+
+            RegistrationUtil.validateUsername(username)
+            RegistrationUtil.validatePassword(password, confirm)
+            RegistrationUtil.validateEmail(email)
+
             // TODO: do some server side things
 
             val resultIntent = Intent().apply {
