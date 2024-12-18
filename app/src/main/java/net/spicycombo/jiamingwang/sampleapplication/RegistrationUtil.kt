@@ -4,26 +4,16 @@ class RegistrationUtil {
     companion object {
         // use this in the test class for the is username taken test
         // make another similar list for some taken emails
-        var existingUsers = listOf("MrMills")
+        var existingUsers = listOf("test")
         // you can use listOf<type>() instead of making the list & adding individual
         // List<String> blah...
 
-        fun isExistingUser(user : String) : Boolean {
-            return existingUsers.contains(user)
-        }
-
         // isn't empty
         // not already taken
-        // minimum number of characters is 3, max 16
-        // Alphanumeric, with _
+        // minimum number of characters is 3
 
         fun validateUsername(username: String) : Boolean {
-            if (isExistingUser(username)) return false
-            if (3 > username.length || username.length > 16) return false
-            if (!username.contains("[A-Za-z0-9_]".toRegex())) return false
-
-
-            return true
+            return false
             // TODO: Implement
         }
 
@@ -34,10 +24,14 @@ class RegistrationUtil {
         //  special characters !@#$%*
         //
         fun validatePassword(password: String, confirm: String) : Boolean {
-            if (!password.contains("[\\x21-\\x7E]\n".toRegex())) return false
-            // all alphanumeric, and non-chinese characters
-            if (password != confirm) return false
-            return true
+            return false
+            // TODO: Implement
+        }
+
+        // min 3, max 6
+        // Numbers
+        fun validateUserName(username: String) : Boolean {
+            return false
             // TODO: Implement
         }
 
